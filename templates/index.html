@@ -24,6 +24,17 @@
                 { id: 2, title: "Flaskを復習する", done: true },
             ]
         };
+        // サーバーからデータを取得する
+
+        async function loadtasks() {
+          //サーバーサイドからデータを取得する
+            const response = await fetch("/api/tasks");
+            const data = await response.json();
+            renderTasks(data);
+        }
+        function loadTasks() {
+            
+        }
 
         function renderTasks(data) {
             // ↓↓↓ ここから実装する ↓↓↓
@@ -40,25 +51,14 @@
             //            CSSで打ち消し線がつく
             //
             // ↑↑↑ ここまで実装する ↑↑↑
-
-            // サマリーを表示
-            const summary = document.getElementById("summary");
-            summary.textContent = `全${data.total_count}件中 ${data.done_count}件完了`;
-
-            // タスク一覧を表示
-            const list = document.getElementById("task-list");
-            list.innerHTML = "";
-
-            data.tasks.forEach(task => {
-                const li = document.createElement("li");
-                li.className = task.done ? "done" : "";
-                li.textContent = task.done ? `✅${task.title}`:`■${task.title}`;
-                list.appendChild(li);
-            })
         }
 
         // 仮データで表示を確認する
         renderTasks(mockData);
+
+
+
+        
     </script>
 </body>
 </html>
