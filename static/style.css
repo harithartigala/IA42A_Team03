@@ -1,0 +1,44 @@
+/* static/style.css */
+body {
+    font-family: sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 480px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+#summary {
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+}
+
+#task-list li {
+    padding: 12px;
+    border-bottom: 1px solid #eeeeee;
+    font-size: 16px;
+}
+
+#task-list li.done {
+    color: #999999;
+    text-decoration: line-through;
+}

@@ -1,0 +1,49 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>タスク管理</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>タスク一覧</h1>
+        <p id="summary"></p>
+        <ul id="task-list"></ul>
+    </div>
+
+    <script>
+        // ★開発段階ではコード内に仮データを書く（Step 1で決めた形に合わせる）
+        const mockData = {
+            generated_at: "2026-06-16 10:30:00",
+            total_count: 2,
+            done_count: 1,
+            tasks: [
+                { id: 1, title: "Gitの演習をする", done: false },
+                { id: 2, title: "Flaskを復習する", done: true },
+            ]
+        };
+
+        function renderTasks(data) {
+            // ↓↓↓ ここから実装する ↓↓↓
+            //
+            // 1. id="summary" の要素に「全○件中 ○件完了」を表示する
+            //    ヒント：document.getElementById("summary") で要素を取得する
+            //    ヒント：data.total_count と data.done_count を使う
+            //
+            // 2. id="task-list" の要素に、タスクの数だけ <li> を追加する
+            //    ヒント：data.tasks.forEach(task => { ... }) でループする
+            //    ヒント：document.createElement("li") で要素を作る
+            //    ヒント：task.done が true なら「✅」、false なら「⬜」を先頭につける
+            //    ヒント：done が true の場合は li.className = "done" にすると
+            //            CSSで打ち消し線がつく
+            //
+            // ↑↑↑ ここまで実装する ↑↑↑
+        }
+
+        // 仮データで表示を確認する
+        renderTasks(mockData);
+    </script>
+</body>
+</html>
