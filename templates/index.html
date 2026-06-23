@@ -25,6 +25,15 @@
             ]
         };
 
+        // サーバーサイドからデータを取得
+        async function loadTasks(){
+            // サーバーにJsonをくださいとお願いする
+            const response = await fetch("/api/tasks");
+            const data = await response.json();
+
+            renderTasks(data);
+        }
+
         function renderTasks(data) {
             // ↓↓↓ ここから実装する ↓↓↓
             //
@@ -57,8 +66,7 @@
             })
         }
 
-        // 仮データで表示を確認する
-        renderTasks(mockData);
+        loadTasks();
     </script>
 </body>
 </html>
