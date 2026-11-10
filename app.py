@@ -14,6 +14,10 @@ tasks = [
 @app.route("/")
 def index():
     return render_template("index.html")
+    
+@app.route("/lighting")
+def lighting():
+    return render_template("lighting.html")
 
 @app.route("/api/tasks", methods=["GET"])
 def get_tasks():
